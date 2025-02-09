@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 description = "serde-opml "
-repository = "https://github.com/serde-opml /serde-opml "
-homepage = "https://github.com/serde-opml /serde-opml "
+repository = "https://github.com/serde-opml/serde-opml"
+homepage = "https://github.com/serde-opml/serde-opml"
 authors = ["ahaoboy"]
 
 [dependencies]

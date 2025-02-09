@@ -47,8 +47,8 @@ pub struct Body {
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Outline {
-  #[serde(skip_serializing_if = "Option::is_none")]
-  #[serde(rename = "text", default)]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "text", default)]
     pub text: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "description", default)]
@@ -82,11 +82,9 @@ mod test {
     #[test]
     fn test_base() {
         for name in std::fs::read_dir("assets").unwrap() {
-            println!("{:?}", name);
             let txt = std::fs::read_to_string(name.unwrap().path()).unwrap();
-            println!("{:?}", txt);
-            let opml: Opml = from_str(&txt).expect("解析 opml 失败");
-            println!("{:?}", opml);
+            let opml: Opml = from_str(&txt).expect("failed to parse opml");
+            assert_eq!(opml.version, Some("2.0".to_string()))
         }
     }
 }
