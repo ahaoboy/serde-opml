@@ -7,5 +7,5 @@ cargo binstall serde-opml
 ## usage
 
 ```bash
-serde-opml test.opml > test.json
+serde-opml test.opml
 ```
